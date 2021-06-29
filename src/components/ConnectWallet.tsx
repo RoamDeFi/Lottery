@@ -16,8 +16,9 @@ function ConnectWallet(props:Props) {
   }
 
   return (
-    <FancyButton text={props.walletConnected ? addressFormatted : "Connect"} onButtonClick={props.connectWallet}/>
+    <FancyButton text={props.walletConnected ? addressFormatted : "FANTOM CONNECT"} onButtonClick={props.connectWallet}/>
   );
+  
 }
 
 export default ConnectWallet;

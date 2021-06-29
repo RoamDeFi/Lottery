@@ -10,14 +10,15 @@
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "babel-polyfill": "^6.26.0",
     "bootstrap": "^4.6.0",
     "hardhat": "^2.1.2",
     "react": "^17.0.1",
     "react-bootstrap": "^1.5.2",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.3",
-    "typescript": "^4.1.2",
     "truffle-flattener": "^1.5.0",
+    "typescript": "^4.1.2",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
@@ -27,7 +28,6 @@
     "eject": "react-scripts eject",
     "flat:fantom": "truffle-flattener contracts/FantomLottery.sol > flats/FantomLottery_flat.sol",
     "flat:token": "truffle-flattener contracts/TokenLottery.sol > flats/TokenLottery_flat.sol"
-
   },
   "eslintConfig": {
     "extends": [

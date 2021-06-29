@@ -1,6 +1,6 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import FancyButton from './FancyButton';
-import tesseract from '../assets/tesseract.gif';
+import GIF from '../assets/ROAM.gif';
 
 import '../styling/Dashboard.css';
 
@@ -20,11 +20,11 @@ function Dashboard(props:Props) {
         <Row>
           <Col>
             {/* enter: displays ticket number */}
-            <FancyButton text={"ENTER"} onButtonClick={props.enterFunction} disabled={!props.walletConnected}/>
+            <FancyButton text={"BUY TICKET"} onButtonClick={props.enterFunction} disabled={!props.walletConnected}/>
           </Col>
           <Col>
             {/* draw: displays winning addresses */}
-            <FancyButton text={"DRAW"} onButtonClick={props.drawFunction} disabled={!props.walletConnected}/>
+            <FancyButton text={"DRAW WINNER"} onButtonClick={props.drawFunction} disabled={!props.walletConnected}/>
             {/*<div><p>Text</p></div>*/}
           </Col>
         </Row>
@@ -41,14 +41,14 @@ function Dashboard(props:Props) {
         */}
         <Row>
           <Col>
-            <img src={tesseract}/>
+            <img src={GIF} alt={"trippy ROAM gif"}/>
           </Col>
         </Row>
         <Row className="mt-5">
           <Col>
-            <div>User Balance: {props.userBalance}</div>
+            <div>{props.userBalance}</div>
             {/* enable: once winner is drawn */}
-            <FancyButton text={"CLAIM"} onButtonClick={props.getPaidFunction} disabled={!props.walletConnected}/>
+            <FancyButton text={"CLAIM PRIZE"} onButtonClick={props.getPaidFunction} disabled={!props.walletConnected}/>
           </Col>
         </Row>
       </div>

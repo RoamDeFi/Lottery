@@ -1,0 +1,576 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "FantomLottery",
+  "sourceName": "contracts/FantomLottery.sol",
+  "abi": [{
+    "inputs": [{
+      "internalType": "string",
+      "name": "_name",
+      "type": "string"
+    }, {
+      "internalType": "uint256",
+      "name": "_frequency",
+      "type": "uint256"
+    }, {
+      "internalType": "uint256",
+      "name": "_price",
+      "type": "uint256"
+    }, {
+      "internalType": "uint256",
+      "name": "_odds",
+      "type": "uint256"
+    }, {
+      "internalType": "uint256",
+      "name": "_fee",
+      "type": "uint256"
+    }, {
+      "internalType": "address",
+      "name": "_treasury",
+      "type": "address"
+    }],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  }, {
+    "anonymous": false,
+    "inputs": [{
+      "indexed": false,
+      "internalType": "bool",
+      "name": "winnerSelected",
+      "type": "bool"
+    }, {
+      "indexed": false,
+      "internalType": "bytes32",
+      "name": "winningTicket",
+      "type": "bytes32"
+    }],
+    "name": "newDraw",
+    "type": "event"
+  }, {
+    "anonymous": false,
+    "inputs": [{
+      "indexed": false,
+      "internalType": "address",
+      "name": "entrant",
+      "type": "address"
+    }, {
+      "indexed": false,
+      "internalType": "bytes32",
+      "name": "ticketID",
+      "type": "bytes32"
+    }, {
+      "indexed": false,
+      "internalType": "uint256",
+      "name": "totalPot",
+      "type": "uint256"
+    }],
+    "name": "newEntry",
+    "type": "event"
+  }, {
+    "anonymous": false,
+    "inputs": [{
+      "indexed": false,
+      "internalType": "address",
+      "name": "user",
+      "type": "address"
+    }, {
+      "indexed": false,
+      "internalType": "uint256",
+      "name": "amount",
+      "type": "uint256"
+    }],
+    "name": "newPayment",
+    "type": "event"
+  }, {
+    "anonymous": false,
+    "inputs": [{
+      "indexed": false,
+      "internalType": "uint256",
+      "name": "lottoNumber",
+      "type": "uint256"
+    }],
+    "name": "newRound",
+    "type": "event"
+  }, {
+    "inputs": [{
+      "internalType": "contract IERC20",
+      "name": "",
+      "type": "address"
+    }],
+    "name": "TokenDebtToRecipient",
+    "outputs": [{
+      "internalType": "uint256",
+      "name": "",
+      "type": "uint256"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+  }, {
+    "inputs": [{
+      "internalType": "address",
+      "name": "newSweeper",
+      "type": "address"
+    }],
+    "name": "changeSweeper",
+    "outputs": [{
+      "internalType": "bool",
+      "name": "",
+      "type": "bool"
+    }],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }, {
+    "inputs": [],
+    "name": "currentDraw",
+    "outputs": [{
+      "internalType": "uint256",
+      "name": "",
+      "type": "uint256"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+  }, {
+    "inputs": [],
+    "name": "currentLotto",
+    "outputs": [{
+      "internalType": "uint256",
+      "name": "",
+      "type": "uint256"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+  }, {
+    "inputs": [{
+      "internalType": "address",
+      "name": "",
+      "type": "address"
+    }],
+    "name": "debtToUser",
+    "outputs": [{
+      "internalType": "uint256",
+      "name": "",
+      "type": "uint256"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+  }, {
+    "inputs": [],
+    "name": "draw",
+    "outputs": [{
+      "internalType": "bool",
+      "name": "",
+      "type": "bool"
+    }],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }, {
+    "inputs": [],
+    "name": "enter",
+    "outputs": [{
+      "internalType": "bool",
+      "name": "",
+      "type": "bool"
+    }],
+    "stateMutability": "payable",
+    "type": "function"
+  }, {
+    "inputs": [],
+    "name": "fantomDebtToRecipient",
+    "outputs": [{
+      "internalType": "uint256",
+      "name": "",
+      "type": "uint256"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+  }, {
+    "inputs": [],
+    "name": "fee",
+    "outputs": [{
+      "internalType": "uint256",
+      "name": "",
+      "type": "uint256"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+  }, {
+    "inputs": [],
+    "name": "frequency",
+    "outputs": [{
+      "internalType": "uint256",
+      "name": "",
+      "type": "uint256"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+  }, {
+    "inputs": [],
+    "name": "ftmDecimals",
+    "outputs": [{
+      "internalType": "uint256",
+      "name": "",
+      "type": "uint256"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+  }, {
+    "inputs": [],
+    "name": "getPaid",
+    "outputs": [{
+      "internalType": "bool",
+      "name": "",
+      "type": "bool"
+    }],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }, {
+    "inputs": [],
+    "name": "name",
+    "outputs": [{
+      "internalType": "string",
+      "name": "",
+      "type": "string"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+  }, {
+    "inputs": [],
+    "name": "odds",
+    "outputs": [{
+      "internalType": "uint256",
+      "name": "",
+      "type": "uint256"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+  }, {
+    "inputs": [],
+    "name": "price",
+    "outputs": [{
+      "internalType": "uint256",
+      "name": "",
+      "type": "uint256"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+  }, {
+    "inputs": [],
+    "name": "readyToDraw",
+    "outputs": [{
+      "internalType": "bool",
+      "name": "",
+      "type": "bool"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+  }, {
+    "inputs": [],
+    "name": "self",
+    "outputs": [{
+      "internalType": "address",
+      "name": "",
+      "type": "address"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+  }, {
+    "inputs": [{
+      "internalType": "address",
+      "name": "tokenToSweep",
+      "type": "address"
+    }],
+    "name": "sweep",
+    "outputs": [{
+      "internalType": "bool",
+      "name": "",
+      "type": "bool"
+    }],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }, {
+    "inputs": [],
+    "name": "sweeper",
+    "outputs": [{
+      "internalType": "address",
+      "name": "",
+      "type": "address"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+  }, {
+    "inputs": [],
+    "name": "ticketCounter",
+    "outputs": [{
+      "internalType": "uint256",
+      "name": "",
+      "type": "uint256"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+  }, {
+    "inputs": [{
+      "internalType": "bytes32",
+      "name": "",
+      "type": "bytes32"
+    }],
+    "name": "tickets",
+    "outputs": [{
+      "internalType": "uint256",
+      "name": "ticketNumber",
+      "type": "uint256"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+  }, {
+    "inputs": [],
+    "name": "totalValuePlayed",
+    "outputs": [{
+      "internalType": "uint256",
+      "name": "",
+      "type": "uint256"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+  }, {
+    "inputs": [],
+    "name": "treasury",
+    "outputs": [{
+      "internalType": "address",
+      "name": "",
+      "type": "address"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+  }, {
+    "inputs": [{
+      "internalType": "uint256",
+      "name": "",
+      "type": "uint256"
+    }, {
+      "internalType": "address",
+      "name": "",
+      "type": "address"
+    }, {
+      "internalType": "uint256",
+      "name": "",
+      "type": "uint256"
+    }],
+    "name": "userTickets",
+    "outputs": [{
+      "internalType": "bytes32",
+      "name": "",
+      "type": "bytes32"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+  }, {
+    "inputs": [],
+    "name": "viewCurrentLottery",
+    "outputs": [{
+      "internalType": "uint256",
+      "name": "",
+      "type": "uint256"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+  }, {
+    "inputs": [],
+    "name": "viewFantomCollected",
+    "outputs": [{
+      "internalType": "uint256",
+      "name": "",
+      "type": "uint256"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+  }, {
+    "inputs": [],
+    "name": "viewFrequency",
+    "outputs": [{
+      "internalType": "uint256",
+      "name": "",
+      "type": "uint256"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+  }, {
+    "inputs": [{
+      "internalType": "uint256",
+      "name": "lottoNumber",
+      "type": "uint256"
+    }],
+    "name": "viewLastDrawTime",
+    "outputs": [{
+      "internalType": "uint256",
+      "name": "",
+      "type": "uint256"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+  }, {
+    "inputs": [],
+    "name": "viewName",
+    "outputs": [{
+      "internalType": "string",
+      "name": "",
+      "type": "string"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+  }, {
+    "inputs": [],
+    "name": "viewPrice",
+    "outputs": [{
+      "internalType": "uint256",
+      "name": "",
+      "type": "uint256"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+  }, {
+    "inputs": [{
+      "internalType": "uint256",
+      "name": "lottoNumber",
+      "type": "uint256"
+    }],
+    "name": "viewStartTime",
+    "outputs": [{
+      "internalType": "uint256",
+      "name": "",
+      "type": "uint256"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+  }, {
+    "inputs": [{
+      "internalType": "bytes32",
+      "name": "ticketID",
+      "type": "bytes32"
+    }],
+    "name": "viewTicketHolders",
+    "outputs": [{
+      "internalType": "address[]",
+      "name": "",
+      "type": "address[]"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+  }, {
+    "inputs": [{
+      "internalType": "bytes32",
+      "name": "ticketID",
+      "type": "bytes32"
+    }],
+    "name": "viewTicketNumber",
+    "outputs": [{
+      "internalType": "uint256",
+      "name": "",
+      "type": "uint256"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+  }, {
+    "inputs": [{
+      "internalType": "contract IERC20",
+      "name": "_token",
+      "type": "address"
+    }],
+    "name": "viewTokensCollected",
+    "outputs": [{
+      "internalType": "uint256",
+      "name": "",
+      "type": "uint256"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+  }, {
+    "inputs": [{
+      "internalType": "uint256",
+      "name": "lottoNumber",
+      "type": "uint256"
+    }],
+    "name": "viewTotalPot",
+    "outputs": [{
+      "internalType": "uint256",
+      "name": "",
+      "type": "uint256"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+  }, {
+    "inputs": [{
+      "internalType": "uint256",
+      "name": "lottoNumber",
+      "type": "uint256"
+    }],
+    "name": "viewUserTicketList",
+    "outputs": [{
+      "internalType": "bytes32[]",
+      "name": "",
+      "type": "bytes32[]"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+  }, {
+    "inputs": [],
+    "name": "viewWinChance",
+    "outputs": [{
+      "internalType": "uint256",
+      "name": "",
+      "type": "uint256"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+  }, {
+    "inputs": [{
+      "internalType": "uint256",
+      "name": "lottoNumber",
+      "type": "uint256"
+    }],
+    "name": "viewWinningTicket",
+    "outputs": [{
+      "internalType": "bytes32",
+      "name": "",
+      "type": "bytes32"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+  }, {
+    "inputs": [],
+    "name": "viewWinnings",
+    "outputs": [{
+      "internalType": "uint256",
+      "name": "",
+      "type": "uint256"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+  }, {
+    "inputs": [],
+    "name": "withdrawFantom",
+    "outputs": [{
+      "internalType": "bool",
+      "name": "",
+      "type": "bool"
+    }],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }, {
+    "inputs": [{
+      "internalType": "contract IERC20",
+      "name": "ERC20Address",
+      "type": "address"
+    }],
+    "name": "withdrawToken",
+    "outputs": [{
+      "internalType": "bool",
+      "name": "",
+      "type": "bool"
+    }],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }],
+  "bytecode": "",
+  "deployedBytecode": "",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
