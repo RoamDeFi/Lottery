@@ -1,6 +1,6 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import FancyButton from './FancyButton';
-import GIF from '../assets/ROAM.gif';
+import GIF from '../assets/baby.gif';
 
 import '../styling/Dashboard.css';
 
