@@ -70,11 +70,11 @@ contract TokenLottery is ITokenLottery, BaseLottery, RevenueStream {
     return name;
   }
 
-  function viewDrawFrequency() public view override returns (uint) {
+  function viewFrequency() public view override returns (uint) {
     return frequency;
   }
 
-  function viewTicketPrice() public view override returns (uint) {
+  function viewPrice() public view override returns (uint) {
     return price;
   }
 

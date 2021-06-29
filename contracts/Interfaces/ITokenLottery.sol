@@ -9,8 +9,8 @@ interface ITokenLottery {
 
   function viewTokenAddress() external view returns (address);
   function viewName() external view returns (string memory);
-  function viewDrawFrequency() external view returns (uint);
-  function viewTicketPrice() external view returns (uint);
+  function viewFrequency() external view returns (uint);
+  function viewPrice() external view returns (uint);
   function viewWinChance() external view returns (uint);
   function viewCurrentLottery() external view returns (uint);
   function viewTicketHolders(bytes32 ticketID) external view returns (address[] memory);
