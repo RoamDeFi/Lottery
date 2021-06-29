@@ -15,7 +15,7 @@ async function main() {
   if (network.name === "hardhat") {
     console.warn(
       "You are trying to deploy a contract to the Hardhat Network, which" +
-        "gets automatically created and destroyed every time. Use the Hardhat" +
+        "gets automatically created and destroyed each time. Use the Hardhat" +
         " option '--network localhost'"
     );
   }
@@ -27,14 +27,14 @@ async function main() {
     await deployer.getAddress()
   );
 
-  console.log("Account balance:", (await deployer.getBalance()).toString());
+  console.log("Account Balance:", (await deployer.getBalance()).toString());
 
   const Lotto = await ethers.getContractFactory("FantomLottery");
   const lottery = await Lotto.deploy(name, frequency, ethers.utils.parseEther("1"), modulus, ethers.utils.parseEther("0.03"), recipient);
 
   await lottery.deployed();
 
-  console.log("Lotto address:", lottery.address);
+  console.log("Lotto Address:", lottery.address);
 
   // We also save the contract's artifacts and address in the frontend directory
   saveFrontendFiles(lottery);
