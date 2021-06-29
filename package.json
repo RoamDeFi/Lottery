@@ -17,13 +17,17 @@
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.3",
     "typescript": "^4.1.2",
+    "truffle-flattener": "^1.5.0",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "flat:fantom": "truffle-flattener contracts/FantomLottery.sol > flats/FantomLottery_flat.sol",
+    "flat:token": "truffle-flattener contracts/TokenLottery.sol > flats/TokenLottery_flat.sol"
+
   },
   "eslintConfig": {
     "extends": [
